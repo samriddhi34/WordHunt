@@ -23,7 +23,7 @@ std::string Bot::provideDetailedFeedback(const std::string& guess) {
             for (size_t j = 0; j < secretWord.size(); ++j) {
                 if (guess[i] == secretWord[j] && !matched[j]) {
                     matched[j] = true;
-                    feedback.replace(i * 5, 3, "🟨");  // Yellow for wrong position
+                    feedback[i * 3 + 1] = '🟨';  // Yellow for wrong position
                     break;
                 }
             }
