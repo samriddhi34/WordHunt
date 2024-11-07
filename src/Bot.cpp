@@ -10,10 +10,10 @@ std::string Bot::provideDetailedFeedback(const std::string& guess) {
     // First pass for exact matches (Green)
     for (size_t i = 0; i < guess.size() && i < secretWord.size(); ++i) {
         if (guess[i] == secretWord[i]) {
-            feedback += "[🟩 " + std::string(1, guess[i]) + "] ";  // Green for correct position
+            feedback += "🟩 ";  // Green for correct position
             matched[i] = true;
         } else {
-            feedback += "[⬜ " + std::string(1, guess[i]) + "] ";  // Placeholder for unmatched
+            feedback += "🟥" ;  // Placeholder for unmatched
         }
     }
 
