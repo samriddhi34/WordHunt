@@ -9,6 +9,7 @@ class Game {
 private:
     Word word;                 // The secret word to guess
     Player player;             // The player making guesses
+    Bot bot;                   // The bot interacting with the game
     int maxAttempts;           // Maximum number of attempts
 
 public:
@@ -20,6 +21,9 @@ public:
 
     // Function to show the result of the guess
     void showResult(bool correctGuess);
+
+    // Function to start the game with the bot and the player
+    void playGame();
 };
 
 #endif
