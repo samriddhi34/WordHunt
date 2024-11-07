@@ -4,7 +4,15 @@
 Game::Game(std::string word, std::string playerName) 
     : word(word), player(playerName), maxAttempts(7) {}
 
+// Core setup for the game
 void Game::startGame() {
+    std::cout << "Starting the game for player " << player.getName() << "!" << std::endl;
+    player.resetAttempts(maxAttempts);
+}
+
+// Main game loop and logic
+void Game::playGame() {
+    startGame();
     bool correctGuess = false;
     int attempts = 0;
     
@@ -19,16 +27,14 @@ void Game::startGame() {
             std::cout << "Wrong guess! You have " << player.hasAttemptsLeft() 
                       << " attempts left." << std::endl;
         }
-
+        
         attempts++;
     }
 
-    if (!correctGuess) {
-        std::cout << "Sorry! You've used all your attempts. The correct word was: " 
-                  << word.getWord() << std::endl;
-    }
+    showResult(correctGuess);
 }
 
+// Final game result display
 void Game::showResult(bool correctGuess) {
     if (correctGuess) {
         std::cout << "You won the game!" << std::endl;
