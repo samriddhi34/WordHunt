@@ -9,6 +9,7 @@ private:
     Word word;    // The secret word the bot is trying to guess
 
 public:
+    Bot() : word("") {}
     // Constructor to initialize the bot with a word
     Bot(std::string word);
     std::string provideFeedback(bool correctGuess, int attemptsLeft, const std::string& lastGuess);
