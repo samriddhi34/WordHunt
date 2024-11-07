@@ -18,6 +18,9 @@ public:
     // Function to decrement the attempts
     void decrementAttempts();
 
+    // Function to reset attempts to maxAttempts
+    void resetAttempts(int maxAttempts);
+
     // Function to check if the player has any attempts left
     bool hasAttemptsLeft() const;
 
