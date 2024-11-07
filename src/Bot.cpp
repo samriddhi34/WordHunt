@@ -1,5 +1,5 @@
 #include "Bot.h"
-
+Bot::Bot(std::string word) : word(word) {}
 std::string Bot::provideFeedback(bool correctGuess, int attemptsLeft, const std::string& lastGuess) {
     if (correctGuess) {
         return "🎉 Great job! You've guessed the word!";
