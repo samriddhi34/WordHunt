@@ -1,14 +1,16 @@
-#include <iostream>
 #include "Game.h"
+#include <iostream>
 
 int main() {
     std::string playerName;
-    std::cout << "Enter your name: ";
+    std::cout << "Welcome to WordHunt! Enter your name: ";
     std::cin >> playerName;
 
-    Game wordleGame("apple", playerName); // Example word is "apple"
-    wordleGame.startGame();
+    std::string secretWord = "apple";  // You can choose a random word here
+    Game game(secretWord, playerName);
+    game.playGame();
 
     return 0;
 }
+
 
