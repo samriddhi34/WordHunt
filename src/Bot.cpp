@@ -2,7 +2,7 @@
 Bot::Bot(std::string word) : word(word) {}
 std::string Bot::provideDetailedFeedback(const std::string& guess) {
     std::string feedback;
-    std::string secretWord = word;  // Assume `word` is the correct word stored in Bot
+    std::string secretWord = word.getWord();  // Assume `word` is the correct word stored in Bot
 
     // Track matched letters to avoid duplicate yellow marks
     bool matched[secretWord.size()] = {false};
