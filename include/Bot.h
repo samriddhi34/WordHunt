@@ -11,6 +11,9 @@ private:
 public:
     // Constructor to initialize the bot with a word
     Bot(std::string word);
+    std::string provideFeedback(bool correctGuess, int attemptsLeft, const std::string& lastGuess);
+    std::string getEncouragement();
+    std::string revealSecretWord(const std::string& word);
 
     // Function to generate the bot's guess
     std::string generateGuess();
