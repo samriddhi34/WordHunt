@@ -3,7 +3,7 @@
 #include <iostream>
 
 Game::Game(std::string word, std::string playerName) 
-    : word(word), player(playerName), maxAttempts(7), bot() {} // Initialized bot
+    : word(word), player(playerName), maxAttempts(7), bot(word) {} // Initialized bot
 
 void Game::startGame() {
     std::cout << "Starting the game for player " << player.getName() << "!" << std::endl;
