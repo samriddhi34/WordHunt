@@ -22,6 +22,7 @@ void Game::playGame() {
             std::cout << bot.provideFeedback(true, player.hasAttemptsLeft(), guess) << std::endl;
         } else {
             player.decrementAttempts();
+            std::cout << bot.provideDetailedFeedback(guess) << std::endl;
             std::cout << bot.provideFeedback(false, player.hasAttemptsLeft(), guess) << std::endl;
             if (player.hasAttemptsLeft()) {
                 std::cout << bot.getEncouragement() << std::endl;
