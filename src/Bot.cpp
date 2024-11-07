@@ -1,7 +1,4 @@
 #include "Bot.h"
-#include <iostream>
-
-Bot::Bot() {}
 
 std::string Bot::provideFeedback(bool correctGuess, int attemptsLeft, const std::string& lastGuess) {
     if (correctGuess) {
