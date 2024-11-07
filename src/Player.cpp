@@ -10,6 +10,11 @@ std::string Player::getName() const {
 void Player::decrementAttempts() {
     attemptsLeft--;
 }
+void resetAttempts(int maxAttempts) {
+        this->maxAttempts = maxAttempts;
+        attempts = maxAttempts;
+}
+
 
 bool Player::hasAttemptsLeft() const {
     return attemptsLeft > 0;
