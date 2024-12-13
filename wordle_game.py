@@ -18,17 +18,24 @@ def get_player_guess():
 
 
 def provide_feedback(secret_word, guess):
-    feedback = []
+    feedback = ["🟥"] * len(secret_word)  # Default to "⬜" for incorrect letters
+    secret_word_list = list(secret_word)  # Convert to list for mutable operations
+    
+    # First pass: Mark correct positions
     for i in range(len(secret_word)):
         if guess[i] == secret_word[i]:
-            feedback.append("G")  # Correct position
-        elif guess[i] in secret_word:
-            feedback.append("Y")  # Correct letter, wrong position
-        else:
-            feedback.append("W")  # Wrong letter
+            feedback[i] = "🟩"  # Correct position
+            secret_word_list[i] = None  # Mark as used
+
+    # Second pass: Mark correct letters in wrong positions
+    for i in range(len(secret_word)):
+        if feedback[i] == "🟩":
+            continue  # Skip already matched positions
+        if guess[i] in secret_word_list:
+            feedback[i] = "🟨"  # Correct letter, wrong position
+            secret_word_list[secret_word_list.index(guess[i])] = None  # Mark as used
+
     return ''.join(feedback)
-
-
 
 
 
