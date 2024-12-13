@@ -55,7 +55,13 @@ def play_game(words):
 
 if __name__ == "__main__":
     words = load_words('words.txt')
+    while True:
     play_game(words)
+    replay = input("Do you want to play again? (yes/no): ").strip().lower()
+    if replay != 'yes':
+        print("Thanks for playing! Goodbye!")
+        break
+
 
 
 
