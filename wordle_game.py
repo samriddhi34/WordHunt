@@ -40,10 +40,23 @@ def provide_feedback(secret_word, guess):
 
 
 
-secret_word = "apple"  # For testing
-guess = "algae"
-feedback = provide_feedback(secret_word, guess)
-print(f"Feedback: {feedback}")
+def play_game(words):
+    secret_word = choose_random_word(words)
+    print("Welcome to Wordle!")
+    attempts = 6
+    for _ in range(attempts):
+        guess = get_player_guess()
+        feedback = provide_feedback(secret_word, guess)
+        print(f"Feedback: {feedback}")
+        if guess == secret_word:
+            print("🎉 You guessed it right! 🎉")
+            return
+    print(f"Sorry, you've run out of attempts. The word was: {secret_word}")
+
+if __name__ == "__main__":
+    words = load_words('words.txt')
+    play_game(words)
+
 
 
 
