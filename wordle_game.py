@@ -21,11 +21,11 @@ def provide_feedback(secret_word, guess):
     feedback = []
     for i in range(len(secret_word)):
         if guess[i] == secret_word[i]:
-            feedback.append("🟩")  # Correct position
+            feedback.append("G")  # Correct position
         elif guess[i] in secret_word:
-            feedback.append("🟨")  # Correct letter, wrong position
+            feedback.append("Y")  # Correct letter, wrong position
         else:
-            feedback.append("⬜")  # Wrong letter
+            feedback.append("W")  # Wrong letter
     return ''.join(feedback)
 
 
