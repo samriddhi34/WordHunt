@@ -17,12 +17,26 @@ def get_player_guess():
     return guess
 
 
-words = load_words('words.txt')
-secret_word = choose_random_word(words)
-print(f"Secret word is: {secret_word}")  # For testing
+def provide_feedback(secret_word, guess):
+    feedback = []
+    for i in range(len(secret_word)):
+        if guess[i] == secret_word[i]:
+            feedback.append("🟩")  # Correct position
+        elif guess[i] in secret_word:
+            feedback.append("🟨")  # Correct letter, wrong position
+        else:
+            feedback.append("⬜")  # Wrong letter
+    return ''.join(feedback)
 
-guess = get_player_guess()
-print(f"Your guess: {guess}")
+
+
+
+
+
+secret_word = "apple"  # For testing
+guess = "algae"
+feedback = provide_feedback(secret_word, guess)
+print(f"Feedback: {feedback}")
 
 
 
